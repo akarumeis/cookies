@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main>
+    <div class="basket_div">
+        {% for product in products %}
+            <form method="post" class="product" id="{{product.pk}}">
+                {% csrf_token %}
+                <p class="title">{{product.title}}</p>
+                <p><img src="{{product.image.url}}"></p>
+                <p>{{product.description}}</p>
+                <input name="id" value="{{product.pk}}" hidden>
+                <input name="url" value="{% url 'basket' %}" hidden>
+                <button value="{{product.pk}}" class="delete_btn">Delete</button>
+            </form>
+        {% endfor %}
+    </div>
+
+</main>
+{% endblock %}
