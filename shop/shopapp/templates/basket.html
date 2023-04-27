@@ -11,7 +11,7 @@
                 <p>{{product.description}}</p>
                 <input name="id" value="{{product.pk}}" hidden>
                 <input name="url" value="{% url 'basket' %}" hidden>
-                <button value="{{product.pk}}" class="delete_btn">Delete</button>
+                <button value="{{product.pk}}" class="delete_btn">{{text_btn}}</button>
             </form>
         {% endfor %}
     </div>

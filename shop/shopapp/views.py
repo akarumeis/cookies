@@ -5,7 +5,7 @@ from .models import Product
 
 def product_page(request):
     response = render(request, 'shop.html', context={
-                      'title': "Головна", 'products': Product.objects.all()})
+                      'title': "Головна", 'text_btn': 'Buy', 'products': Product.objects.all()})
     if request.method == 'POST':
         basket = request.COOKIES.get('cart', None)
         product_id = request.POST.get('id')
@@ -24,6 +24,7 @@ def product_page(request):
 def basket(request):
     context = {
         'title': "Корзина",
+        'text_btn': 'Delete'
     }
     basket = []
     basket_cookie = request.COOKIES.get('cart', None)

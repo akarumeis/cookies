@@ -9,8 +9,8 @@
             <p><img src="{{product.image.url}}"></p>
             <p>{{product.description}}</p>
             <input name="id" value="{{product.pk}}" hidden>
-            <input name="url" value="{% url 'product_page' %}" hidden>
-            <button value="{{product.pk}}" class="send_btn">Buy</button>
+            <input name="url" value="{% url 'basket' %}" hidden>
+            <button value="{{product.pk}}" class="send_btn">{{text_btn}}</button>
         </form>
     {% endfor %}
 </main>
